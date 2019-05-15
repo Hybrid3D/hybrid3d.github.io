@@ -18,3 +18,5 @@ github_username:  Hybrid3D
 
 # Build settings
 markdown: kramdown
+
+theme: jekyll-theme-minimal
