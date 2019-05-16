@@ -9,14 +9,21 @@
 title: Hybrid3D
 email: hyuk.allen.kim@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Computer Graphics, Machine Learning, Quantum Computer
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.hybrid3d.dev" # the base hostname & protocol for your site
 github_username:  Hybrid3D
 
+permalink: /:year/:month/:day/:title
+
 # Build settings
 markdown: kramdown
 
-theme: jekyll-theme-minimal
+#theme: jekyll-theme-minimal
+
+plugins:
+  - jekyll-figure
+  - jekyll-redirect-from
+
+#kramdown:
+#  parse_block_html: true
