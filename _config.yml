@@ -26,3 +26,11 @@ plugins:
 
 #kramdown:
 #  parse_block_html: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      comments : true
