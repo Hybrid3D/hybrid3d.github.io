@@ -22,7 +22,6 @@ markdown: kramdown
 #theme: jekyll-theme-minimal
 
 plugins:
-  - jekyll-figure
   - jekyll-redirect-from
 
 #kramdown:
