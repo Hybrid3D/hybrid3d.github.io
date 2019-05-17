@@ -23,6 +23,8 @@ markdown: kramdown
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-feed
 
 #kramdown:
 #  parse_block_html: true
