@@ -13,8 +13,8 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.hybrid3d.dev" # the base hostname & protocol for your site
 github_username:  Hybrid3D
-
 permalink: /:year/:month/:day/:title
+google_analytics: UA-446868-7
 
 # Build settings
 markdown: kramdown
