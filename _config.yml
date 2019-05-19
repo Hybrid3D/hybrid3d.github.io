@@ -44,3 +44,4 @@ defaults:
       type: "posts"
     values:
       comments : true
+theme: jekyll-theme-slate
