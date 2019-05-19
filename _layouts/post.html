@@ -25,7 +25,7 @@ layout: default
         {% endfor %}
       {% endif %}
       {% if page.difficulty %} • 난이도 
-        {% for diff in site.difficulties %}
+        {% for diff in site.difficulty %}
           {% if page.difficulty == diff.name %}
             <b>{{ diff.title }}</b>
           {% endif %}
