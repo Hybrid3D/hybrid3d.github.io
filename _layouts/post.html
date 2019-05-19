@@ -5,7 +5,48 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+    <p class="post-meta">
+      {% if page.categories %}
+        {% assign page_categories = page.categories | join: ', ' %}
+        {% for category_name in page_categories %}
+          {% comment %}
+            이대로 할 수 있으면 좋은데.
+            {% assign category_title = site.categories | where_exp:"category", "category.title == 'quantum-computer'" %}
+            {{ category_name }} 1
+            {{ category_title }} 2
+          {% endcomment %}
+          {% for category in site.category %}
+            {% if category.name == category_name %}
+              <a href="/{{ category.name }}/">
+              {{ category.title }}
+              </a>
+            {% endif %}
+          {% endfor %}  
+        {% endfor %}
+      {% endif %}
+      {% if page.difficulty %} • 난이도 
+        {% for diff in site.difficulties %}
+          {% if page.difficulty == diff.name %}
+            <b>{{ diff.title }}</b>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      • <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+      <!--
+      {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
+      <br/>
+
+      
+      {% if page.tags %}
+        태그: 
+        {% assign page_tags = page.tags | join: ', ' %}
+        {% for tag_name in page_tags %}
+          {{ tag_name }}
+        {% endfor %}
+      {% endif %}
+      -->
+      
+    </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">

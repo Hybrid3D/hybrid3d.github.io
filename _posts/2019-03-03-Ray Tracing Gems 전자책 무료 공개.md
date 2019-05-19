@@ -2,7 +2,7 @@
 layout: post
 title:  "Ray Tracing Gems 전자책 무료 공개"
 date:   2019-03-03 01:00:00 +0900
-categories: computer_graphics
+categories: computer-graphics
 tags: [raytracing, rtg, 책, photon_mapping, sspm]
 redirect_from: /387
 ---

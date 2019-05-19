@@ -29,6 +29,14 @@ plugins:
 #kramdown:
 #  parse_block_html: true
 
+collections:
+  category:
+    output: true
+    permalink: /:path/
+  difficulty:
+    output: true
+    permalink: /difficulty/:path/
+
 defaults:
   -
     scope:

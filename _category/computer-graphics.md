@@ -1,6 +1,5 @@
---
+---
 layout: category
 title: Computer Graphics
-permalink: /computer_graphics/
+name: computer-graphics
 ---
-asdf
