@@ -20,6 +20,7 @@ google_analytics: UA-446868-7
 markdown: kramdown
 
 #theme: jekyll-theme-minimal
+theme: jekyll-theme-slate
 
 plugins:
   - jekyll-redirect-from
@@ -45,4 +46,3 @@ defaults:
     values:
       difficulty: "none"
       comments : true
-theme: jekyll-theme-slate
