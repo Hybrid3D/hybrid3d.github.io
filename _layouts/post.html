@@ -24,12 +24,13 @@ layout: default
           {% endfor %}  
         {% endfor %}
       {% endif %}
-      {% if page.difficulty %} • 난이도 
+      {% if page.difficulty and page.difficulty != 'none' %} • 난이도
         {% for diff in site.difficulty %}
           {% if page.difficulty == diff.name %}
             <b>{{ diff.title }}</b>
           {% endif %}
         {% endfor %}
+        
       {% endif %}
       • <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
       <!--

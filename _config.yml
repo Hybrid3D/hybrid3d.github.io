@@ -43,5 +43,6 @@ defaults:
       path: ""
       type: "posts"
     values:
+      difficulty: "none"
       comments : true
 theme: jekyll-theme-slate

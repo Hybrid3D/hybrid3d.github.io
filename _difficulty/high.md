@@ -1,7 +1,6 @@
 ---
-layout: default
-name: high
+layout: difficulty
 title: 높음
+name: high
 ---
 
-ㅁㄴㅇㄹ
