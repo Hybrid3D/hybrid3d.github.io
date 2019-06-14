@@ -1,0 +1,35 @@
+{% assign image_name = include.name %}
+{% assign image_num = include.number %}
+{% assign override_caption = include.caption %}
+
+{% assign img = site.image | where:"name", image_name | first %}
+
+{% if img %}
+    {% if override_caption %}
+        {% assign caption = override_caption %}
+    {% else %}
+        {% assign caption = img.title %}
+    {% endif %}
+
+    {% if img.source and img.source-url %}
+        {% capture detail_caption %}{{ caption }} <br/>출처: [{{img.source}}]({{img.source-url}}){% endcapture %}
+    {% else %}
+        {% assign detail_caption = caption %}
+    {% endif %}
+
+    {% if image_num %}
+        {% capture detail_caption %}그림 {{ image_num }}. {{ detail_caption }}{% endcapture %}
+    {% endif %}
+
+<img src="{{ img.image-url }}" alt="{{ img.title }}" style="{{include.style}}"/>
+{{ detail_caption }}
+{:.image-caption}
+
+{% else %}
+
+<center>
+  잠시 이미지가 표시 되지 않고 있습니다.
+</center>
+
+{% endif %}
+

@@ -37,6 +37,8 @@ collections:
   difficulty:
     output: true
     permalink: /difficulty/:path/
+  image:
+    output: false
 
 defaults:
   -
