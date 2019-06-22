@@ -1,10 +1,11 @@
 ---
 layout: post
 title:  "양자 컴퓨터 - 슈뢰딩거 고양이 만들기 - 파트 2: 양자 컴퓨터에 돌려보기"
-date:   2019-06-22 01:00:00 +0900
+date:   2019-06-22 23:36:24 +0900
 categories: quantum-computer
 tags: [quantum computer, Schrödinger, 고양이, 확률]
 difficulty: middle
+published: false
 ---
 [이전 글][prev]에서 양자 컴퓨터에서 슈뢰딩거의 고양이를 구성하는 법을 다뤘다. 유명한 슈뢰딩거의 고양이의 개념을 이용해서 큐빗(qubit)을 설명했다. 여기서는 슈뢰딩거 고양이를 실제 양자 컴퓨터로 돌려보는 것을 해본다.
 
