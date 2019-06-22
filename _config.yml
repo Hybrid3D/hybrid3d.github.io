@@ -22,6 +22,8 @@ markdown: kramdown
 #theme: jekyll-theme-minimal
 theme: jekyll-theme-slate
 
+image_path: "/images/"
+
 plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
