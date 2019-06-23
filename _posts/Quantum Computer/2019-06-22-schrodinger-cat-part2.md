@@ -6,7 +6,7 @@ categories: quantum-computer
 tags: [quantum computer, Schrödinger, 고양이, 확률]
 difficulty: middle
 ---
-[이전 글][prev]에서 양자 컴퓨터에서 슈뢰딩거의 고양이를 구성하는 법을 다뤘다. 유명한 슈뢰딩거의 고양이의 개념을 이용해서 큐빗(qubit)을 설명했다. 여기서는 슈뢰딩거 고양이를 실제 양자 컴퓨터로 돌려보는 것을 해본다.
+[이전 글][prev]에서 양자 컴퓨터에서 슈뢰딩거의 고양이를 구성하는 법을 다뤘다. 유명한 슈뢰딩거의 고양이의 개념을 이용해서 **큐빗(qubit)**을 설명했다. 여기서는 슈뢰딩거 고양이를 실제 양자 컴퓨터로 돌려보는 것을 해본다.
 
 [IBM Q Experience][ibmq]에서는 양자 컴퓨터를 웹에서 클라우드로 돌려볼 수 있다. 여기서 회로를 만들거나 QASM으로 코딩을 하면 **ibmqx4**라는 `큐빗 5개짜리 양자 컴퓨터`로 내가 만든 코드가 돈다. 아주 단순한 것도 몇분 걸려서 나오니 실용적이라기보다는 테스트와 학습용이라고 볼 수 있다. 이 글에서는 IBM Q Experience를 이용해서 슈뢰딩거 고양이를 양자 컴퓨터로 돌려보도록 한다. 여기서 툴 사용법을 다 다룰 순 없으니 핵심적인 것만 다루도록 하겠다.
 
@@ -50,7 +50,7 @@ creg c[1];
 
 오잉? 0 상태가 100% 이어야 하는데, 94.434% 이고 1인 확률이 5.566%나 된다. 이건 현재 양자 컴퓨터의 기술적 한계로 오차는 점점 줄어 들고 있지만 아직까지는 이론적인 100%가 실제 100%이진 않다. 사실 고전 컴퓨터도 많은 오차가 있었다가 줄어든 것이고 여전히 없진 않다. 에러 검출을 이용해서 보정을 하기도 하니 양자 컴퓨터라고 딱히 비교 못할 문제가 있는 것은 아니다.
 
-## 2. 슈뢰딩거 고양이 써킷 만들기
+## 2. 슈뢰딩거 고양이 회로 만들기
 이제 오차를 뒤로 하고 이제 상태 0과 1이 각각 50%, 50%가 되는 회로를 만들기 위해 한단계 더 나아가보자.
 
 ### 2.1. X 게이트
@@ -123,7 +123,7 @@ Rx 게이트를 사용하면 $$\frac{1}{\sqrt{2}}$$ 대신 $$-\frac{1}{\sqrt{2}}
 3. [Noise cancelling for quantum bits][noise]
 4. [Bra–ket notation - Wikipedia][bra-ket]
 
-[prev]: /2019/05/15/%EC%96%91%EC%9E%90-%EC%BB%B4%ED%93%A8%ED%84%B0-%EC%8A%88%EB%A2%B0%EB%94%A9%EA%B1%B0-%EA%B3%A0%EC%96%91%EC%9D%B4-%EB%A7%8C%EB%93%A4%EA%B8%B0 "양자 컴퓨터 - 슈뢰딩거 고양이 만들기"
+[prev]: /2019-05-15-schrodinger-cat "양자 컴퓨터 - 슈뢰딩거 고양이 만들기"
 [ibmq]: https://quantum-computing.ibm.com/ "IBM Q Experience"
 [noise]: https://www.youtube.com/watch?v=dxQCmm5OMZQ "Noise cancelling for quantum bits"
 [실습]: https://developer.ibm.com/kr/cloud/whats-new/2017/12/05/ibm-q-experience/ "IBM Q Experience로 시작하는 양자컴퓨터 프로그래밍 실습"
