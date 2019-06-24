@@ -24,6 +24,7 @@ markdown: kramdown
 theme: jekyll-theme-slate
 
 image_path: "/images/"
+feedburner: "http://feeds.feedburner.com/hybrid3d"
 
 plugins:
   - jekyll-redirect-from
