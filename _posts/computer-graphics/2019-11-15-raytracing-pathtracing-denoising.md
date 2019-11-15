@@ -23,9 +23,8 @@ difficulty: middle
 ## 레이트레이싱과 패스 트레이싱
 레이트레이싱(ray tracing)과 패스 트레이싱(path tracing)은 결과적으로는 비슷해보이는데 패스 트레이싱이 좀 더 오래 걸리고 정확한 기법이다. 가령 일반적인 레이트레이싱 알고리즘에서는 픽셀당 광선을 하나씩 쏜다. 하나씩 쏜 후 거울 등을 표현하기 위해 재귀적으로 두 세번 더 트레이싱한다. 일반적으로는 여기까지가 일반적인 레이트레이싱 알고리즘이다.
 
-{% include figure.html url="images/cg/RTinOneWeekend-1024x577.png" caption="그림 출처: [Fast and Fun: My First Real-Time Ray Tracing Demo](https://devblogs.nvidia.com/my-first-ray-tracing-demo/)" %}
-
-거울 표현을 잘하는게 레이트레이싱의 특징이다.
+{% include figure.html url="images/cg/RTinOneWeekend-1024x577.png" caption="거울 표현을 잘하는게 레이트레이싱의 특징이다.\\
+그림 출처: [Fast and Fun: My First Real-Time Ray Tracing Demo](https://devblogs.nvidia.com/my-first-ray-tracing-demo/)" %}
 
 기술적으로 본다면 위와 같은 기본적인 레이트레이싱은 주로 반사/스페큘러만 계산 한다. 조명 방향으로 레이를 한번 더 쏴서 그림자 여부를 판단 한 후 직접 조명을 계산한다. 이 때 GI(global illumination)의 스페큘러 영역만 계산하는 것이기 때문에 GI의 디퓨즈 영역은 결여 되어 있다.
 
@@ -33,7 +32,7 @@ difficulty: middle
 
 아래 영상은 패스 트레이싱이 뭔지 쉽게 설명해주는 것으로 그림으로 매우 쉽게 설명을 한다.
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/frLwRLS_ZR0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/frLwRLS_ZR0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 위 영상으로도 알 수 있다시피 패스 트레이싱은 무수히 많은 광선을 쏴야 하기 때문에 실시간으로 계산하기에는 무리가 많다.
 
@@ -42,7 +41,8 @@ difficulty: middle
 
 패스 트레이싱을 제외하고 실시간 레이트레이싱만 살펴 보자. 단순한 반사는 반사 레이를 한번 더 쏘면 되기 때문에 매우 처리가 간단하다. 하지만 글로시(glossy)의 경우 계산 해야하는 범위가 넓어지기 때문에 수십개에서 수백개의 레이를 쏴야만 만족스러운 결과를 알 수 있다.
 
-{% include figure.html url="images/cg/ndc19-brdf-specular.png" caption="(완벽한) 거울은 추가 레이 하나로 처리가 가능하다. 일반적인 스페큘러는 수십개/수백개를 쏴야한다.<br>그림 출처: [[NDC 2019] 드래곤 하운드의 PBR과 레이트레이싱 렌더링 기법](https://speakerdeck.com/hybrid3d/ndc-2019-deuraegon-haundeuyi-pbrgwa-reiteureising-rendeoring-gibeob)" %}
+{% include figure.html url="images/cg/ndc19-brdf-specular.png" caption="(완벽한) 거울은 추가 레이 하나로 처리가 가능하다. 일반적인 스페큘러는 수십개/수백개를 쏴야한다.\\
+그림 출처: [[NDC 2019] 드래곤 하운드의 PBR과 레이트레이싱 렌더링 기법](https://speakerdeck.com/hybrid3d/ndc-2019-deuraegon-haundeuyi-pbrgwa-reiteureising-rendeoring-gibeob)" %}
 
 이 글로시는 흔히 스페큘러의 모양을 만드는 것과 같은 것이다. 반사 되는 영역이 얼마나 퍼지는지를 나타내는 것으로 퐁 모델(phong model)에서는 지수를 가지고 처리했고, PBR 모델에서는 러프니스로 처리하는 영역이다.
 
