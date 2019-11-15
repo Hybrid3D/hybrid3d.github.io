@@ -37,8 +37,6 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
-
-
 /**
  * Images
  */
@@ -47,8 +45,6 @@ img {
     // width: 60%;
     // vertical-align: middle;
 }
-
-
 
 /**
  * Figures
@@ -60,6 +56,18 @@ figure > img {
 figcaption {
     font-size: $small-font-size;
     text-align: center;
+}
+/**
+ * video-container
+ */
+ .video-container {
+    text-align: center;
+    display: block;
+ }
+
+.video-container iframe, .video-container embed {
+    max-width:100%;
+    max-height:100%;
 }
 
 /**
