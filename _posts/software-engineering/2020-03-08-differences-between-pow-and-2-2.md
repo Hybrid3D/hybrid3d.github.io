@@ -55,8 +55,12 @@ GPU 어셈블리를 보면 분기 과정이 더 명확해지겠지만 그 부분
 # 컴파일러간 차이
 C++의 CPU의 pow 함수는 훨씬 더 쓰기 편하다. pow(x, y)에서 y가 정수면(float 형이더라도) 알아서 문제가 없도록 처리해준다(gcc 9.2 기준). 예를 들어 pow(-2.0f, 2.0f) 같은 것도 알아서 $$(-2)*(-2)=4$$를 계산해준다([참고 2][2]).
 
-더 좋은 방법은 pow(-2, 2) 형태로 정수를 쓰는 것이다. 이 경우 컴파일러가 $$(-2)*(-2)$$로 치환을 해주어 많은 어셈블리 명령어를 절약할 수도 있다(CPU에 해당하는 이야기다).
-물론 더 좋은건 처음부터 $$(-2)*(-2)$$로 쓰거나, 함수에 넣기 전 abs(-x) 형태를 취하는 것이다.
+이보다 조금은 나은 방법은 pow(-2, 2) 형태로 정수를 쓰는 것이다. 이 경우 컴파일러가 $$(-2)*(-2)$$로 치환을 해주어 많은 어셈블리 명령어를 절약할 수도 있다(CPU에 해당하는 이야기다).
+물론 가장 좋은건 함수에 넣기 전 abs(-x) 형태를 취하거나 처음부터 $$(-2)*(-2)$$로 쓰는 것이다.
+
+이처럼 GPU와 CPU는 근본적인 환경 차이 때문에 동작이 제법 많이 다르다. CPU는 물론이고 GPU에서도 쉐이더 언어나 컴파일러(혹은 GPU 및 드라이버)에 따라 동작이 다를 수 있다.
+특정 입력에 대해 결과값이 항상 NaN으로 나오는 경우는 어쩌면 그나마 나은 상황이다. HLSL pow 함수에서 pow(0, 0) = 0 or NaN인 경우처럼 GPU마다 동작이 다르다면
+이 부분에 버그가 있을 때 찾아내기 훨씬 힘들어질 것이다.
 
 # 마무리
 프로그래머가 수학 함수를 다룰 때는 그냥 수식 그대로를 옮기는 것으로 끝나지 말아야한다. 실제 수학 함수의 정의역과 치역을 알고 있어야 하며, 그것에 해당하는 프로그래밍 함수는 어떠한 제약이 있는지를 알고 있어야 한다. 초반에 말했듯이 컴퓨터는 덧셈 하나도 맘놓고 못하기 때문에 마음 놓고 쓸 수 있는 수학 함수란 사실상 없다.
@@ -72,6 +76,7 @@ log 함수를 다룰 때는 x가 0 이하가 되지 않도록 하듯이, 나눗�
 1. [HLSL의 pow 함수][1]
 2. [C++의 std::pow 함수][2]
 3. [Exponentiation by squaring][3] - pow(x, y)의 y가 양의 정수일 경우 계산하는 알고리즘이다. 
+4. [How to Prove That 1 = 2?][4] - 0으로 나눴을 때 어떻게 수식 체계가 망가지는지를 알 수 있는 흔한 사례다.
 
 [^1]: $$2^x$$, $$log_2 x$$ 명령어가 없는 CPU의 경우 계산 테이블로 미리 만들어두는 것도 흔히 쓰는 방식이다.
 [^2]: 수학적으로 정의되지 않음(undefined)은 그냥 무조건 피해야하는 것이라고 보면 된다. 정의 되지 않는 것을 사용할 경우 수학의 수식 체계가 망가진다. 이게 망가지면 흔한 유머처럼 1=2와 같은 잘못된 수식이 만들어진다. (예시, [How to Prove That 1 = 2?][4])
@@ -79,4 +84,4 @@ log 함수를 다룰 때는 x가 0 이하가 되지 않도록 하듯이, 나눗�
 [1]: https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-pow "pow"
 [2]: https://en.cppreference.com/w/cpp/numeric/math/pow "std::pow"
 [3]: https://en.wikipedia.org/wiki/Exponentiation_by_squaring "Exponentiation by squaring"
-[4]: https://www.quickanddirtytips.com/education/math/how-to-prove-that-1-2 ""How to Prove That 1 = 2?"
+[4]: https://www.quickanddirtytips.com/education/math/how-to-prove-that-1-2 "How to Prove That 1 = 2?"
