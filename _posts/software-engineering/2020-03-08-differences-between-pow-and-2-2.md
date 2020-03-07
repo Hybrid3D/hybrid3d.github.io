@@ -2,7 +2,7 @@
 layout: post
 title:  "pow(x, y)와 x의 y승의 차이"
 date:   2020-03-08 00:00:00 +0900
-categories: general
+categories: software-engineering
 tags: [수학, 수학 함수, pow, hlsl]
 difficulty: middle
 ---
