@@ -36,9 +36,9 @@ $$x^y = 2^{y\,log_2 x}$$
 
 $$x^y = 2^{y\,log_2 x}$$
 
-이 공식에는 원래 의도와는 다른 제약이 들어간다. 2^x 의 경우 모든 실수를 입력으로 받지만 log 함수의 x의 정의역은 실수 전체가 아니라 0보다 큰 x이다. x가 0이거나 0보다 작은 경우는 정의되지 않아서 넣으면 안된다. 그러한 입력에는 **NaN**가 출력 되는 것이다.
+이 공식에는 원래 의도와는 다른 제약이 들어간다. 2^x 의 경우 모든 실수를 입력으로 받지만 log 함수의 x의 정의역은 실수 전체가 아니라 0보다 큰 실수이다. x가 0이거나 0보다 작은 경우는 정의되지 않아서 넣으면 안된다[^2]. 그러한 입력에는 **NaN**가 출력 되는 것이다.
 
-하지만 0가 0이고 y 가 0보다 큰 경우의 $$x^y$$는 수학적으로 0이라서 NaN으로 두기 아깝다. 이런 경우는 분기문을 이용하면 어렵지 않게 처리할 수 있다. 실제로 pow 함수 내부에서는 분기 처리로 이러한 문제를 우회한다. 이러한 상황은 HLSL(High Level Shader Language)의 pow 함수의 스펙을 살펴보면 좀 더 명확해진다([참고 1][1]).
+하지만 x가 0이고 y 가 0보다 큰 경우의 $$x^y$$는 수학적으로 0이라서 NaN으로 두기 아깝다. 이런 경우는 분기문을 이용하면 어렵지 않게 처리할 수 있다. 실제로 pow 함수 내부에서는 분기 처리로 이러한 문제를 우회한다. 이러한 상황은 HLSL(High Level Shader Language)의 pow 함수의 스펙을 살펴보면 좀 더 명확해진다([참고 1][1]).
 
 {:class="table table-bordered"}
 |X|Y|결과|
@@ -74,7 +74,9 @@ log 함수를 다룰 때는 x가 0 이하가 되지 않도록 하듯이, 나눗�
 3. [Exponentiation by squaring][3] - pow(x, y)의 y가 양의 정수일 경우 계산하는 알고리즘이다. 
 
 [^1]: $$2^x$$, $$log_2 x$$ 명령어가 없는 CPU의 경우 계산 테이블로 미리 만들어두는 것도 흔히 쓰는 방식이다.
+[^2]: 수학적으로 정의되지 않음(undefined)은 그냥 무조건 피해야하는 것이라고 보면 된다. 정의 되지 않는 것을 사용할 경우 수학의 수식 체계가 망가진다. 이게 망가지면 흔한 유머처럼 1=2와 같은 잘못된 수식이 만들어진다. (예시, [How to Prove That 1 = 2?][4])
 
 [1]: https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-pow "pow"
 [2]: https://en.cppreference.com/w/cpp/numeric/math/pow "std::pow"
 [3]: https://en.wikipedia.org/wiki/Exponentiation_by_squaring "Exponentiation by squaring"
+[4]: https://www.quickanddirtytips.com/education/math/how-to-prove-that-1-2 ""How to Prove That 1 = 2?"
