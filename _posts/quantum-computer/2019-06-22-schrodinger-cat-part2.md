@@ -12,7 +12,7 @@ difficulty: middle
 
 ## 1. 회로 구성 및 실행
 
-{% include image.html filepath="qc/cat2/1.png" caption="[IBM Q Experience][ibmq] - Circuit composer" number="1" style="width: 90%;" %}
+{% include figure.html filepath="qc/cat2/1.png" caption="[IBM Q Experience][ibmq] - Circuit composer" number="1" style="width: 90%;" %}
 
 IBM Q Experience에 들어가서 **Circuit composer**를 열어보자. 기본적으로는 q[0]~q[4]으로 다섯개의 큐빗이 있다. 일반 고전(classical) 레지스터도 5개가 존재하며 c5로 표시되고 있다. **Circuit editor**에서는 QASM을 직접 수정할 수 있는데 우리는 많은 레지스터가 필요 없으니 먼저 QASM을 직접 고쳐서 다음과 같이 큐빗과 고전 레지스터를 각각 1개로 만들어보자.
 
@@ -30,23 +30,23 @@ creg c[1];
 
 회로의 입력이 0 상태인 \|0\> 들어오는건 회로를 봄으로써 알고 있지만 이전 글에서 강조했던 **측정**을 해보자. 측정은 미터기 표시에 z 글자가 있는 아이콘(**z measurement**)이다. 코드로 넣을 수도 있고 드래그해서 넣을 수도 있다. 다음과 같이 구성해보자.
 
-{% include image.html filepath="qc/cat2/2.png" caption="큐빗(\|0>) 측정(z measurement) 회로" number="2" style="width: 30%" %}
+{% include figure.html filepath="qc/cat2/2.png" caption="큐빗(\|0>) 측정(z measurement) 회로" number="2" style="width: 30%" %}
 
 여기서 아래 화살표로 0이 표시 된건 0번 고전 레지스터에 결과값을 저장한다는 의미이다. 다시 설명하면, 입력 큐빗(\|0>)을 측정(z measurement)해서 0번째 고전 레지스터(c[0])에 저장한다.
 
 이렇게 구성하고 왼쪽의 차트 모양의 아이콘을 클릭해서 **Visualizations**의 Statevector를 보자. 아래와 같이 에뮬레이션 된 결과를 볼 수 있다. 100%(세로 축 1)로 0 상태가 된다는 뜻이다.
 
-{% include image.html filepath="qc/cat2/3.png" caption="\|0>의 측정 결과(Statevector)" number="3" style="" %}
+{% include figure.html filepath="qc/cat2/3.png" caption="\|0>의 측정 결과(Statevector)" number="3" style="" %}
 
 실제 양자 컴퓨터에 넣어보자. 세이브를 하고 오른쪽 위의 **Run** 버튼을 누른다.
 
-{% include image.html filepath="qc/cat2/4.png" caption="제작한 회로를 양자 컴퓨터에서 실행" number="4" %}
+{% include figure.html filepath="qc/cat2/4.png" caption="제작한 회로를 양자 컴퓨터에서 실행" number="4" %}
 
 이때 굳이 4개짜리 큐빗을 쓸 필요도 없고 4천, 8천개의 실행을 돌릴 필요도 없다. 큐빗 2개 짜리인 ibmqx2 와 숫자 1024 를 고른 후 다시한번 Run 을 누른다. 그러면 화면 아래의 **Pending results**에 방금의 실행이 대기 상태로 들어간다. 결과는 몇분 걸린다. 1번이 아닌 몇천번의 결과를 돌리는 이유는 양자 컴퓨터의 결과는 확률적이기 때문이다. 원하는 결과가 맞는지는 확률적으로 알 수 있다.
 
 실행을 기다리면 **Status: COMPLETED**가 뜨고 결과를 볼 수 있다.
 
-{% include image.html filepath="qc/cat2/5.png" caption="\|0\>을 그대로 측정한 결과. 0이 94.434%, 1이 5.566%. 이론적으로는 항상 0이 나와야 한다." number="5" style="width: 90%" %}
+{% include figure.html filepath="qc/cat2/5.png" caption="\|0\>을 그대로 측정한 결과. 0이 94.434%, 1이 5.566%. 이론적으로는 항상 0이 나와야 한다." number="5" style="width: 90%" %}
 
 오잉? 0 상태가 100% 이어야 하는데, 94.434% 이고 1인 확률이 5.566%나 된다. 이건 현재 양자 컴퓨터의 기술적 한계로 오차는 점점 줄어 들고 있지만 아직까지는 이론적인 100%가 실제 100%이진 않다. 사실 고전 컴퓨터도 많은 오차가 있었다가 줄어든 것이고 여전히 없진 않다. 에러 검출을 이용해서 보정을 하기도 하니 양자 컴퓨터라고 딱히 비교 못할 문제가 있는 것은 아니다.
 
@@ -56,11 +56,11 @@ creg c[1];
 ### 2.1. X 게이트
 큐빗의 기본 입력은 모두 \|0> 이다. 이건 회로에서 다른 걸로 변환 할 수 있다. 예를 들면 0 값을 지닌 비트는 NOT 연산으로 1로 바꿀 수 있는데 이에 대응하는 것은 **X 게이트**라고 불리우는 **Pouli X 게이트**이다. X 자 아이콘으로 표시되어 있다. 이걸 측정 아이콘 사이에 넣어보자.
 
-{% include image.html filepath="qc/cat2/6.png" caption="\|0\>에 X 게이트를 적용한 회로" number="6" style="width: 30%" %}
+{% include figure.html filepath="qc/cat2/6.png" caption="\|0\>에 X 게이트를 적용한 회로" number="6" style="width: 30%" %}
 
 아까처럼 Visualizations의 Statevector를 보면 이번엔 1 상태가 100% 인것을 볼 수 있다. 원한다면 다시한번 Run을 해봐도 좋은데 이 글에서는 다음 단계로 바로 넘어가겠다.
 
-{% include image.html filepath="qc/cat2/7.png" caption="\|0\>에 X 게이트를 적용한 Statevector(이론적인 결과)" number="7" %}
+{% include figure.html filepath="qc/cat2/7.png" caption="\|0\>에 X 게이트를 적용한 Statevector(이론적인 결과)" number="7" %}
 
 이렇게 하면 \|0>에 X 게이트를 적용 시켜서 \|1>로 바꾼다. 이걸 수식으로 표현하면 다음과 같다.
 
@@ -78,21 +78,21 @@ $$Ry|0> = \frac{1}{\sqrt{2}}|0> + \frac{1}{\sqrt{2}}|1>$$
 
 Ry 게이트의 진짜 역할이 뭐냐는건 이 글의 범위를 넘어가지만 기본적으로는 회전을 해주는 게이트라고 보면 된다.
 
-{% include image.html filepath="qc/cat2/8.png" caption="\|0\>을 2차원 그래프의 벡터로 표현. 이때 벡터는 길이가 1인 단위 벡터이다. 길이는 확률을 뜻한다. \|0\> 방향으로 길이가 1인건 \|0\>으로 측정될 확률이 100%라는 의미이다." number="8" %}
+{% include figure.html filepath="qc/cat2/8.png" caption="\|0\>을 2차원 그래프의 벡터로 표현. 이때 벡터는 길이가 1인 단위 벡터이다. 길이는 확률을 뜻한다. \|0\> 방향으로 길이가 1인건 \|0\>으로 측정될 확률이 100%라는 의미이다." number="8" %}
 
 \|0> 의 2차원 그래프. \|0>과 \|1>은 흔히 보면 xy 2차원 그래프와 비슷하게 구성할 수 있다. 그림 8에서는 \|0\>을 벡터로 표현했다.
 
-{% include image.html filepath="qc/cat2/9.png" caption="Ry\|0\>를 그래프로 표현. 벡터의 길이는 1인데 각 축으로의 길이는 0.707이다." number="9" %}
+{% include figure.html filepath="qc/cat2/9.png" caption="Ry\|0\>를 그래프로 표현. 벡터의 길이는 1인데 각 축으로의 길이는 0.707이다." number="9" %}
 
 그림 9는 \|0\>을 Ry 게이트로 회전한 것이다. 2차원 회전하면 행렬이 생각날 수도 있는데, 실제로 맞다. X 게이트와 Ry 게이트는 모두 행렬로 표현할 수 있다. 여기서 행렬 자체를 보여주진 않겠다. 중요한건 0 상태를 Ry 게이트로 회전하면 50%, 50%를 나타내는 벡터로 변환 된다는 것이다.
 
-{% include image.html filepath="qc/cat2/10.png" caption="슈뢰딩거 고양이 회로" number="10" %}
+{% include figure.html filepath="qc/cat2/10.png" caption="슈뢰딩거 고양이 회로" number="10" %}
 
 이렇게 구성해서 Statevector를 확인해보면 0 상태와 1 상태 모두 **0.707**($$=\frac{1}{\sqrt{2}}$$)인걸 확인할 수 있다.
 
 이제 Run 을 누르고 ibmqx2 와 1024를 골라서 다시 양자 컴퓨터에 실행 시켜본다.
 
-{% include image.html filepath="qc/cat2/11.png" caption="슈뢰딩거 고양이 회로의 실제 측정 결과" number="11" %}
+{% include figure.html filepath="qc/cat2/11.png" caption="슈뢰딩거 고양이 회로의 실제 측정 결과" number="11" %}
 
 이번에도 오차가 있었다. \|0>일 확률은 53.711% 이고 \|1>일 확률은 46.289% 이다. 오차가 크긴 하지만 이 정도면 나쁘지 않은 결과라고 할 수 있겠다.
 

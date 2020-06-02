@@ -16,14 +16,14 @@ difficulty: middle
 레이트레이싱과 비교해서 **래스터라이제이션**의 가장 큰 특장을 하나만 말하라고 하면 래스터라이제이션은 반드시 카메라가 필요하다는 점을 들 수 있겠다.
 래스터라이제이션에서는 렌더링에 필요한 삼각형을 카메라 앞에 두고 투영 행렬을 이용해서 화면에 맞게 변환하고 2D로 눌러서 화면의 픽셀 하나하나를 렌더링 한다.
 
-{% include figure.html url="images/cg/raytracing-raster2.png" caption="그림 출처: [Rasterization: a Practical Implementation](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation)" %}
+{% include image.html url="images/cg/raytracing-raster2.png" caption="그림 출처: [Rasterization: a Practical Implementation](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation)" %}
 
 반면 레이트레이싱은 카메라와 무관하게 렌더링에 필요한 계산을 할 수 있고 이것이 레이트레이싱이 반사에 강한 이유이다. 래스터라이제이션에서는 (물론 여러 트릭도 있지만) 거울과 같이 별도의 카메라를 설치할 수 있는 상황에서만 반사를 제대로 계산할 수 있는 반면 레이트레이싱에서는 어디서나 레이를 쏠 수 있기 때문에 어느 지점에서도 원하는대로 반사 계산을 할 수 있다.
 
 ## 레이트레이싱과 패스 트레이싱
 레이트레이싱(ray tracing)과 패스 트레이싱(path tracing)은 결과적으로는 비슷해보이는데 패스 트레이싱이 좀 더 오래 걸리고 정확한 기법이다. 가령 일반적인 레이트레이싱 알고리즘에서는 픽셀당 광선을 하나씩 쏜다. 하나씩 쏜 후 거울 등을 표현하기 위해 재귀적으로 두 세번 더 트레이싱한다. 일반적으로는 여기까지가 일반적인 레이트레이싱 알고리즘이다.
 
-{% include figure.html url="images/cg/RTinOneWeekend-1024x577.png" caption="거울 표현을 잘하는게 레이트레이싱의 특징이다.\\
+{% include image.html url="images/cg/RTinOneWeekend-1024x577.png" caption="거울 표현을 잘하는게 레이트레이싱의 특징이다.\\
 그림 출처: [Fast and Fun: My First Real-Time Ray Tracing Demo](https://devblogs.nvidia.com/my-first-ray-tracing-demo/)" %}
 
 기술적으로 본다면 위와 같은 기본적인 레이트레이싱은 주로 반사/스페큘러만 계산 한다. 조명 방향으로 레이를 한번 더 쏴서 그림자 여부를 판단 한 후 직접 조명을 계산한다. 이 때 GI(global illumination)의 스페큘러 영역만 계산하는 것이기 때문에 GI의 디퓨즈 영역은 결여 되어 있다.
@@ -41,12 +41,12 @@ difficulty: middle
 
 패스 트레이싱을 제외하고 실시간 레이트레이싱만 살펴 보자. 단순한 반사는 반사 레이를 한번 더 쏘면 되기 때문에 매우 처리가 간단하다. 하지만 글로시(glossy)의 경우 계산 해야하는 범위가 넓어지기 때문에 수십개에서 수백개의 레이를 쏴야만 만족스러운 결과를 알 수 있다.
 
-{% include figure.html url="images/cg/ndc19-brdf-specular.png" caption="(완벽한) 거울은 추가 레이 하나로 처리가 가능하다. 일반적인 스페큘러는 수십개/수백개를 쏴야한다.\\
+{% include image.html url="images/cg/ndc19-brdf-specular.png" caption="(완벽한) 거울은 추가 레이 하나로 처리가 가능하다. 일반적인 스페큘러는 수십개/수백개를 쏴야한다.\\
 그림 출처: [[NDC 2019] 드래곤 하운드의 PBR과 레이트레이싱 렌더링 기법](https://speakerdeck.com/hybrid3d/ndc-2019-deuraegon-haundeuyi-pbrgwa-reiteureising-rendeoring-gibeob)" %}
 
 이 글로시는 흔히 스페큘러의 모양을 만드는 것과 같은 것이다. 반사 되는 영역이 얼마나 퍼지는지를 나타내는 것으로 퐁 모델(phong model)에서는 지수를 가지고 처리했고, PBR 모델에서는 러프니스로 처리하는 영역이다.
 
-{% include figure.html url="images/cg/before-after-denoising.png" caption="그림 출처: [[NDC 2019] 드래곤 하운드의 PBR과 레이트레이싱 렌더링 기법](https://speakerdeck.com/hybrid3d/ndc-2019-deuraegon-haundeuyi-pbrgwa-reiteureising-rendeoring-gibeob)" %}
+{% include image.html url="images/cg/before-after-denoising.png" caption="그림 출처: [[NDC 2019] 드래곤 하운드의 PBR과 레이트레이싱 렌더링 기법](https://speakerdeck.com/hybrid3d/ndc-2019-deuraegon-haundeuyi-pbrgwa-reiteureising-rendeoring-gibeob)" %}
 
 디노이징은 화면 기준(screen-space)으로 처리 되는데, 가급적 많은 정보를 이용한다. 월드 좌표, 노말, 러프니스 등을 이용해서 주변 픽셀과 데이터를 공유하고 여기에 TAA(temporal anti-aliasing)과 같은 시간 필터(temporal filter)까지 사용한다면 이전 프레임에서 쏜것도 같이 공유할 수 있다.
 

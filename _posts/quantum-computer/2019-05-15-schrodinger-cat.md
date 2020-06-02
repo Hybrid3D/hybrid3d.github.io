@@ -21,7 +21,7 @@ redirect_from: /605
 
 ## 슈뢰딩거 고양이
 
-{% include image.html name="alive-dead-cats" number="1" %}
+{% include figure.html name="alive-dead-cats" number="1" %}
 
 사고 실험이다. 어떤 독이 있다. 이 독은 기가 막히게 50%의 확률로만 고양이를 죽인다. 어떤 고양이는 면역이 있고, 어떤 고양이는 면역이 없기 때문이다. 딱 50%의 확률이다. 이때 고양이를 상자에 가두고 이 독가스를 주입한다. 그러면 50%의 확률로 살거나 죽을 것이다. 이때 상자를 미리 볼 순 없고 상자를 열어야만 우리는 고양이의 생사를 알 수 있다.
 
@@ -51,16 +51,16 @@ redirect_from: /605
 
 큐빗은 확률을 표현해야하기 때문에 1비트로는 표현이 불가능하고 실수(float, double)로 표현을 해야한다. 즉 앞면 50%, 뒷면 50%를 위해 0.5, 0.5 로 표현을 한다. 이걸 2차원 벡터로 표현해보자.
 
-{% include image.html name="superposed-cat" number="2" style="width: 30%;" %}
+{% include figure.html name="superposed-cat" number="2" style="width: 30%;" %}
 
 $$(0.5, 0.5)$$
 
 여기서 벡터의 앞쪽(왼쪽) 요소는 고양이가 죽을 확률(혹은 동전이 앞면일 확률)이고, 뒷쪽(오른쪽) 요소는 고양이가 살 확률(혹은 동전이 뒷면일 확률)이다. 산 확률과 죽은 확률이 **동시에 존재**한다.
 
-{% include image.html name="alive-cat" number="3" style="width: 40%;"%}
+{% include figure.html name="alive-cat" number="3" style="width: 40%;"%}
 이때 중첩된 고양이가 아닌 위와 같이 살아 있는 고양이는 $$(1, 0)$$로 표현하고
 
-{% include image.html name="dead-cat" number="4" style="width: 40%;"%}
+{% include figure.html name="dead-cat" number="4" style="width: 40%;"%}
 죽은 고양이는 $$(0, 1)$$로 표현한다. 비트로 표현한다면, $$(1, 0)$$은 1로 표현하고 $$(0, 1)$$은 0으로 표현하면 적절할 것이다.
 
 $$(살 확률, 죽은 확률)$$로 표현하는 **큐빗**은 고전 컴퓨터의 비트에 대응하는 양자 컴퓨터의 최소 단위이다. 고전 컴퓨터에서 1비트로 표현하던걸 갑자기 2차원 실수형 벡터로 표현하게 되어버렸다. 너무 뻥튀기 된거 같은 느낌이 든거 같으면 정확하다. 이 때문에 양자 컴퓨터는 뭔가 대단한걸 할 수 있는 컴퓨터인거고 그만큼 만들기도 힘든 것이라고 할 수 있겠다.
@@ -81,7 +81,7 @@ $$(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}})$$
 
 이렇게 확률 진폭을 절대값 제곱해서 확률을 얻은 확률을 가지고 상태가 큐빗을 만드는 과정을 **측정한다(measuring)**고 말한다. 어떤 큐빗을 가지고 있다가 상태가 뭔지를 알기 위해 측정을 하면 그에 맞는 그 확률에 맞게, 0인지 1인지가 결정 된다.
 
-{% include image.html name="cat-graph" number="5" style="width: 100%" %}
+{% include figure.html name="cat-graph" number="5" style="width: 100%" %}
 
 이때 그 결정된 큐빗은 이전에 측정하기 전 큐빗과 같은 큐빗이 아니다. 측정된 상태로 변한 것이다. 다시 말해서 박스를 열고 나면(측정을 하고 나면) 이제 죽은 상태와 산 산태가 중첩 된 고양이는 존재하지 않는다. 박스를 여는 순간 이제 죽었거나 산 고양이만 남을 뿐 죽기도 하고 살기도 했던 예전의 상자 속 고양이와는 상태가 다른 고양이만 남게 된다.
 
