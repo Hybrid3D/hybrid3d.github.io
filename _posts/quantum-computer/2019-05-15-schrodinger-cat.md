@@ -5,6 +5,7 @@ date:   2019-05-15 01:00:00 +0900
 categories: quantum-computer
 tags: [quantum computer, Schrödinger, 고양이, 확률]
 difficulty: low
+image: /images/alive-dead-cats.jpg
 redirect_from: /605
 ---
 ## 들어가기 전

@@ -20,7 +20,7 @@ PBR에서 스페큘러 값은 비금속(non-metallic) 머티리얼에 대해서�
 
 스넬의 법칙부터 시작한다. 물질마다 굴절률(refractive index) n 이 있고, 빛이 두 물질 사이를 지나갈 때는 스넬의 법칙에 따라 굴절 각도가 정해진다.
 
-{% include image.html url="https://lh3.googleusercontent.com/--yKzlEMInYM/WVzzufuTzgI/AAAAAAAAPK0/pt7NTFWCDGU42Qqc35NjLUieQEyPUmhNgCHMYCw/s0/2017-07-05_23-12-09.png" captiion="[그림] 빛은 스넬의 법칙에 따라 굴절한다. (출처: [Snell's law - Wikipedia](https://en.wikipedia.org/wiki/Snell%27s_law))" %}
+{% include image.html url="https://lh3.googleusercontent.com/--yKzlEMInYM/WVzzufuTzgI/AAAAAAAAPK0/pt7NTFWCDGU42Qqc35NjLUieQEyPUmhNgCHMYCw/s0/2017-07-05_23-12-09.png" caption="그림 1. 빛은 스넬의 법칙에 따라 굴절한다. (출처: [Snell's law - Wikipedia](https://en.wikipedia.org/wiki/Snell%27s_law))" %}
 
 $$ n_1 sin \theta_1 = n_2 sin \theta_2 $$
 
@@ -92,7 +92,7 @@ updateReflectance();
 * 반사율은 물질의 굴절률에 따라 다르지만 1.5 정도로 맞추면 많은 물질과 비슷하게 생각할 수 있다. 이때 굴절률 1.5에 해당하는 것이 4%다.
 * 반사율은 입사각에 따라 다르지만, 수직으로 입사하는 빛(입사각=0)의 4%를 기본으로 하고 비스듬한 방향에서의 반사는 프레넬 효과로 처리한다.
 
-{% include image.html url="https://lh3.googleusercontent.com/-TYgrmZwSoH0/WVzzJQDZP4I/AAAAAAAAPKk/Fi0ngUNatk0rmbbs3eZfHUCQhqTCrZzKgCHMYCw/s0/2017-07-05_23-09-40.png" caption="[그림] 녹색 화살표는 4%를 의미하고, 녹색 사각형은 프레넬 효과가 담당하는 영역을 의미한다.\\
+{% include image.html url="https://lh3.googleusercontent.com/-TYgrmZwSoH0/WVzzJQDZP4I/AAAAAAAAPKk/Fi0ngUNatk0rmbbs3eZfHUCQhqTCrZzKgCHMYCw/s0/2017-07-05_23-09-40.png" caption="그림 2. 녹색 화살표는 4%를 의미하고, 녹색 사각형은 프레넬 효과가 담당하는 영역을 의미한다.\\
 (이미지 출처: [Fresnel equations - Wikipedia](https://en.wikipedia.org/wiki/Fresnel_equations))" %}
 
 ## 정리 2

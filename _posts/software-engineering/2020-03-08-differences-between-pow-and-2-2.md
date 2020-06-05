@@ -5,6 +5,7 @@ date:   2020-03-08 00:00:00 +0900
 categories: software-engineering
 tags: [수학, 수학 함수, pow, hlsl]
 difficulty: middle
+image: /images/unsplash/antoine-dautry-05A-kdOH6Hw-unsplash.jpg
 ---
 이 글에선 수학 함수의 사용에 대한 주의점을 다루려고 한다. pow 함수를 통해 실제 문제가 되는 사례를 중심으로 수학 함수를 다룰 때 함수가 정의하는 영역(정의역/공역)을 다루는 것이 중요하다는 것을 알아본다.
 
