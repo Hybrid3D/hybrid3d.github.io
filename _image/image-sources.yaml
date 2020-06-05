@@ -1,11 +1,6 @@
 
 images:
   -
-    name: System of equations
-    image: /images/unsplash/antoine-dautry-05A-kdOH6Hw-unsplash/jpg
-    url: https://unsplash.com/photos/05A-kdOH6Hw
-    author: Antoine Dautry (@antoine1003)
-  -
     name: Female aerospace engineer writes equations
     image: /images/unsplash/thisisengineering-raeng-GzDrm7SYQ0g-unsplash.jpg
     url: https://unsplash.com/photos/GzDrm7SYQ0g
@@ -14,23 +9,38 @@ images:
     name: Motherboard
     image: /images/unsplash/michael-dziedzic--Rc6usOigMk-unsplash.jpg
     url: https://unsplash.com/photos/-Rc6usOigMk
-    autor: Michael Dziedzic (@lazycreekimages)
+    author: Michael Dziedzic (@lazycreekimages)
   -
     name: Glass Orb in Study II
     image: /images/unsplash/michael-dziedzic-gEN5Btvf2Eg-unsplash.jpg
     url: https://unsplash.com/photos/X0UrDOiHaS0
-    autor: Michael Dziedzic (@lazycreekimages)
+    author: Michael Dziedzic (@lazycreekimages)
   -
     name: The Wizard's Study
     image: https://unsplash.com/photos/xTbJO0qA8es
     url: /images/unsplash/michael-dziedzic-xTbJO0qA8es-unsplash.jpg
-    autor: Michael Dziedzic (@lazycreekimages)
+    author: Michael Dziedzic (@lazycreekimages)
   -
     name: Lazy Creek Studios, Tyler, TX
     image: /images/unsplash/michael-dziedzic-cl_vHvZ8r8E-unsplash.jpg
     url: https://unsplash.com/photos/cl_vHvZ8r8E
-    autor: Michael Dziedzic (@lazycreekimages)
+    author: Michael Dziedzic (@lazycreekimages)
   # used in posts below
+  -
+    name: British Style – Jaguar E Type V12
+    image: /images/unsplash/markus-spiske-6rF_Du5cn1Y-unsplash.jpg
+    url: https://unsplash.com/photos/6rF_Du5cn1Y
+    author: Markus Spiske (@markusspiske)
+  - 
+    name: Testing photoshop, inspired by Michael Pistono.
+    image: /images/unsplash/marc-olivier-jodoin--TQUERQGUZ8-unsplash.jpg
+    url: https://unsplash.com/photos/-TQUERQGUZ8
+    author: Marc-Olivier Jodoin (@marcojodoin)
+  -
+    name: System of equations
+    image: /images/unsplash/antoine-dautry-05A-kdOH6Hw-unsplash/jpg
+    url: https://unsplash.com/photos/05A-kdOH6Hw
+    author: Antoine Dautry (@antoine1003)
   -
     name: dead-cat
     image: /images/dead-cat.jpg

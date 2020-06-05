@@ -5,6 +5,7 @@ date:   2019-05-06 01:00:00 +0900
 categories: computer-graphics
 tags: [brdf]
 difficulty: high
+image: /images/unsplash/marc-olivier-jodoin--TQUERQGUZ8-unsplash.jpg
 redirect_from: /525
 ---
 * [거울의 BRDF - 파트 1]({% post_url 2019-05-02-mirror-brdf-part1 %})
