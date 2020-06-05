@@ -1,0 +1,43 @@
+
+images:
+  -
+    name: System of equations
+    image: /images/unsplash/antoine-dautry-05A-kdOH6Hw-unsplash/jpg
+    url: https://unsplash.com/photos/05A-kdOH6Hw
+    author: Antoine Dautry (@antoine1003)
+  -
+    name: Female aerospace engineer writes equations
+    image: /images/unsplash/thisisengineering-raeng-GzDrm7SYQ0g-unsplash.jpg
+    url: https://unsplash.com/photos/GzDrm7SYQ0g
+    author: ThisisEngineering RAEng (@thisisengineering)
+  -
+    name: Motherboard
+    image: /images/unsplash/michael-dziedzic--Rc6usOigMk-unsplash.jpg
+    url: https://unsplash.com/photos/-Rc6usOigMk
+    autor: Michael Dziedzic (@lazycreekimages)
+  -
+    name: Glass Orb in Study II
+    image: /images/unsplash/michael-dziedzic-gEN5Btvf2Eg-unsplash.jpg
+    url: https://unsplash.com/photos/X0UrDOiHaS0
+    autor: Michael Dziedzic (@lazycreekimages)
+  -
+    name: The Wizard's Study
+    image: https://unsplash.com/photos/xTbJO0qA8es
+    url: /images/unsplash/michael-dziedzic-xTbJO0qA8es-unsplash.jpg
+    autor: Michael Dziedzic (@lazycreekimages)
+  -
+    name: Lazy Creek Studios, Tyler, TX
+    image: /images/unsplash/michael-dziedzic-cl_vHvZ8r8E-unsplash.jpg
+    url: https://unsplash.com/photos/cl_vHvZ8r8E
+    autor: Michael Dziedzic (@lazycreekimages)
+  # used in posts below
+  -
+    name: dead-cat
+    image: /images/dead-cat.jpg
+    url: https://www.shutterstock.com/ko/image-illustration/cartoon-black-cat-drawing-skeleton-cute-1202505370
+    author: Sudowoodo
+  - 
+    name: rust-metal
+    image: /images/rust-metal.jpg
+    url: https://pixabay.com/photos/bolt-closure-door-wood-green-1484936/
+    author: stux
