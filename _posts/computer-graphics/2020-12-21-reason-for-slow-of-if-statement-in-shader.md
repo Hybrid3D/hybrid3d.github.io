@@ -5,6 +5,7 @@ date:   2020-12-21 18:00:00 +0900
 categories: computer-grahics
 tags: [shader, optimization]
 difficulty: middle
+publish: false
 ---
 ## 개요
 쉐이더에서 IF 문이 성능에 좋지 않다는 것은 프로그래머가 아니더라도 많이들 알고 있는 사실이다.
