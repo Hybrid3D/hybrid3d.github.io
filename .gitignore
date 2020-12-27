@@ -2,3 +2,5 @@
 _site/
 old/
 data/
+
+Gemfile.lock
