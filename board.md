@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 permalink: /board/
 title: 게시판
 sitemap: false
