@@ -12,7 +12,8 @@ nofollow: true
 
 - Position: Senior Graphics/Engine Software Engineer
 - E-mail: hyuk.allen.kim@gmail.com
-- Blog: [blog.hybrid3d.dev](https://blog.hybrid3d.dev/) (Korean)
+- LinkedIn: [https://www.linkedin.com/in/hyuk-kim-55670b30/](https://www.linkedin.com/in/hyuk-kim-55670b30/)
+- Blog: [https://blog.hybrid3d.dev](https://blog.hybrid3d.dev/) (Korean)
 - GitHub: [github.com/Hybrid3D](https://github.com/Hybrid3D)
 
 ---
