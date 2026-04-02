@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "AI 시대의 프로그래머"
-date:   2026-04-03 00:10:00 +0900
+date:   2026-04-03 00:30:00 +0900
 categories: general
 difficulty: none
 ---
