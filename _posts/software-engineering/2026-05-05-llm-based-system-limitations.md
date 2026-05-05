@@ -4,7 +4,6 @@ title: "현재 LLM 기반 시스템의 한계"
 date: 2026-05-05 14:30:00 +0900
 categories: software-engineering
 difficulty: middle
-comments: true
 ---
 
 LLM AI는 요즘은 세계적으로 많은 것을 변화시키고 있고 많은 것을 변화시킬 예정에 있다. 긍정적으로나 부정적으로나 큰 영향을 끼칠 것은 확실한 상황에서 현재 `LLM 기반 시스템`의 한계를 정리해본다.
